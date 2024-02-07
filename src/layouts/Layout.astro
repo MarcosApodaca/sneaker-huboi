@@ -1,8 +1,6 @@
 ---
 import Header from '../components/Header.astro';
-import '@fontsource/public-sans/500.css';
-import '@fontsource/public-sans/900.css';
-import '@fontsource/public-sans/800.css';
+
 interface Props {
 	title: string;
 }
@@ -38,9 +36,14 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: 'Public Sans', sans-serif;
+		font-family: 'Roboto', sans-serif;
 		background: #fff;
 		background-size: 224px;
+		
+	}
+	body{
+		max-width: 100rem;
+		margin: 0 auto
 	}
 	code {
 		font-family:
@@ -57,8 +60,8 @@ h1{
 	font-weight: 900;
 }
 p{
-	font-family: 'Public Sans', sans-serif;
-	font-weight: 800;
+	font-family: 'Roboto', sans-serif;
+	
 }
 
 </style>
