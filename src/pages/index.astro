@@ -6,34 +6,159 @@ import Card from '../components/Card.astro';
 <Layout title="sneakers hubois">
 
 	<hero class="hero mx-auto">
-		<h1 class=" text-red-600">SNEAKER</h1>
 		<div class="circle">
-			<div class="coleccion text-white">COLECCION</div>
-
 		</div>
+		<div class="coleccion rounded-b-xl text-xs font-extralight lett text-white z-10 flex justify-end items-end p-6"><p>COLECCION</p></div>
+		<p class="text-white text-9xl font-extrabold text-center mr-80">SNEA <br>
+			<span class="mr-20">KER</span></p>
+		<div class="zapatilla rounded-t-xl">
+		</div>
+		<img src="/zapatillas-hero.png" alt="zapatilla-hero" class="zapatilla-hero">
 	</hero>
+	<article class="flex justify-between mt-[500px] gap-6">
+		
+		<div class="flex flex-col">
+			<div class="flex  ">
+				<h2 class="pago font-bold text-4xl uppercase self-center">Pago contra reembolso</h2>
+				<!-- <img class="w-12 ml-5" src="/pago.png" alt="icono pago"> -->
+			</div>
+			<p class=" text-pretty"> Realiza tu pedido y paga en efectivo al recibirlo en la puerta de tu casa. Esta opción te permite inspeccionar tus productos antes de abonar, 
+				brindándote tranquilidad y confianza en cada compra.</p>
+		</div>
+		
+		<div class="flex flex-col">
+			<div class="flex mb-7">
+				<h2 class=" self-center uppercase font-bold text-4xl">Alta Calidad</h2>
+				<img class="w-12 ml-5" src="/quality.png" alt="icono calidad">
+			</div>
+			<p class=" text-pretty"> Cada producto ha sido meticulosamente seleccionado y diseñado para ofrecerte la mejor experiencia. Descubre la claridad de la excelencia en cada compra con nosotros.</p>			
+		</div>
+
+		<div class="flex flex-col">
+			<div class="flex mb-7">
+				<h2 class=" self-center uppercase font-bold text-4xl">whatsapp</h2>
+				<img class="w-12 ml-5" src="/whatsapp.png" alt="icono whatsapp">
+			</div>
+			<p>Haz tus compras fácilmente! en sneakers hubio, solo tienes que contactarnos por WhatsApp y decirnos qué producto deseas. Nos encargaremos de todo.</p>
+		</div>
+
+	</article>
+	<section class=" mt-20">
+		<div class="flex w-14 mb-16">
+		<h3 class=" font-extrabold text-3xl uppercase self-center mr-10">Sneakers</h3>
+		<img src="/arrow-left.png" alt="icono flecha">
+		<img src="/arrow-right.png" alt="icono flecha">
+		</div>
+		<div class="flex gap-5">
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+		</div>
+	</section>
+	<section class=" mt-20">
+		<div class="flex w-14 mb-16">
+		<h3 class=" font-extrabold text-3xl uppercase self-center mr-10">Sudaderas</h3>
+		<img src="/arrow-left.png" alt="icono flecha">
+		<img src="/arrow-right.png" alt="icono flecha">
+		</div>
+		<div class="flex gap-5">
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+			<Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
+		</div>
+	</section>
+	<main class=" mx-auto my-24 ">
+		<div class="card_comprar p-10">
+		<h2>COMO COMPRAR ?</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit, explicabo modi incidunt iure odio! Id ipsum molestiae iusto, distinctio et doloribus ipsam, animi libero quis, modi maiores itaque nobis.</p>
+		</div>
+		<img class="comprar_zapatilla" src="/zapatilla-como-comprar.png" alt="">
+	</main>
+	
 </Layout>
 
 <style>
 	.coleccion{
-	color: red;
-	width: 20vh;
-	height: 20vh;
+	position: absolute;
+	width: 300px;
+	height: 100px;
 	top: 0;
-	left: 0;
+	left: 50%;
+	background: linear-gradient(180deg, rgba(32,32,32,1) 0%, rgba(38,38,38,0.99) 46%, rgba(82,82,82,1) 100%);
+
 	}
 
 	.hero{
     height: 100vh; 
-    overflow: hidden
 	}
+	hero p {
+		letter-spacing: 3px;
+	}
+
 	.circle {
-    position: relative;
-    width: 200vh;
-    height: 180vh; 
+	position: absolute;
+    width: 1400px;
+    height: 1400px; 
     background-color: #000; 
     border-radius:50%;
-    top: -100vh; 
-    left: -30%;
+    top: -700px; 
+    left: 50px;
+	z-index: -10;
 	}
+
+	.zapatilla-hero{
+	position: absolute;
+	top: 0;
+	left: 40%;
+	width: 40rem;
+	
+	}
+
+	.zapatilla{
+	position: absolute;
+	top: 13%;
+	left: 50%;
+	background: linear-gradient(0deg, rgba(32,32,32,1) 0%, rgba(38,38,38,0.99) 46%, rgba(82,82,82,1) 100%);
+	height: 500px;
+	width: 300px;
+	z-index: -5;
+	}
+
+	.pago{
+		position: relative;
+	}
+	.pago::after{
+		content: "";
+		display: block;
+		background-image: url(../../public/pago.png);
+		background-size: cover; 
+  		background-repeat: no-repeat;
+		width: 4rem;
+		height: 4rem;
+		position: absolute;
+		top: 0;
+		left: 60%;
+	}
+	
+	main{
+		position: relative;
+	}
+	.card_comprar{
+		background-color: #bbb7b7;
+		width: 70rem;
+		height: 20rem;
+		border-radius: 10px;
+	}
+
+	.comprar_zapatilla{
+		position: absolute;
+		top: 0;
+		left: 30%;
+		width: 900px;
+	}
+
 </style>
