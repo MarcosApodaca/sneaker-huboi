@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Contacto from '../components/Header.astro';
 
 interface Props {
 	title: string;
@@ -22,6 +23,7 @@ const { title } = Astro.props;
 	<body>
 		<Header/>
 		<slot />
+		<Contacto/>
 		<Footer>
 	</body>
 </html>
@@ -33,7 +35,7 @@ const { title } = Astro.props;
 		background-size: 224px;
 	}
 	body{
-		max-width: 80rem;
+		
 		margin: 0 auto
 	}
 	h1{
