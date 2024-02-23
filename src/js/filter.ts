@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     brandFilter.addEventListener("change", filterProducts);
     typeFilter.addEventListener("change", filterProducts);
   
-    // Inicializar la lista con todos los productos al cargar la página
+   
     renderProducts(products);
   });
   
