@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const productList = (document.getElementById("productList") as HTMLInputElement);
   
     // Mock data de productos (reemplázalo con tus datos reales)
-    const products = [
+    const products =  [
       { name: "Producto 1", brand: "nike", type: "zapatilla" },
       { name: "Producto 2", brand: "adidas", type: "sudadera" },
       // Agrega más productos según tu necesidad
