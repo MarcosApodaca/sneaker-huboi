@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
   
     // Función para renderizar la lista de productos
-    // function renderProducts(filteredProducts:any) {
-    //   productList.innerHTML = "";
-    //   filteredProducts.forEach((product:any) => {
-    //     const productItem = document.createElement("div");
-    //     productItem.textContent = `${product.name} - Marca: ${product.brand} - Tipo: ${product.type}`;
-    //     productList.appendChild(productItem);
-    //   });
-    // }
+    function renderProducts(filteredProducts:any) {
+      productList.innerHTML = "";
+      filteredProducts.forEach((product:any) => {
+        const productItem = document.createElement("div");
+        productItem.textContent = `${product.name} - Marca: ${product.brand} - Tipo: ${product.type}`;
+        productList.appendChild(productItem);
+      });
+    }
   
     // Función para filtrar productos
     function filterProducts() {
