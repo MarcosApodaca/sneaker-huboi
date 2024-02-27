@@ -1,0 +1,74 @@
+---
+import { useState } from 'react';
+
+export interface Productos {
+  href: string;
+  img: string;
+  title: string;
+  marca: string;
+  tipo: string;
+  tallas: string;
+  precio: string;
+}
+
+const ProductCard = ({ href, img, title, tipo, tallas, precio }: Productos) => {
+  return (
+    <li class="card">
+      <a href={href}>
+        <div class="card-img mb-3">
+          <img class="my-24 w-80" src={img} alt="imagen" />
+        </div>
+      </a>
+      <h4>{title}</h4>
+      <p>{tipo}</p>
+      <p>{tallas}</p>
+      <p class="precio">{precio}</p>
+    </li>
+  );
+};
+
+const ProductFilter = ({ products }: { products: Productos[] }) => {
+  const [filterMarca, setFilterMarca] = useState('');
+  const [filterTipo, setFilterTipo] = useState('');
+
+  const handleMarcaChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterMarca(event.target.value);
+  };
+
+  const handleTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterTipo(event.target.value);
+  };
+
+  const filteredProducts = products.filter(product =>
+    (filterMarca === '' || product.marca === filterMarca) &&
+    (filterTipo === '' || product.tipo === filterTipo)
+  );
+
+  return (
+    <div>
+      <label>
+        Filtrar por marca:
+        <select value={filterMarca} onChange={handleMarcaChange}>
+          <option value="">Todos</option>
+          {/* Añade opciones de marcas según tus necesidades */}
+        </select>
+      </label>
+
+      <label>
+        Filtrar por tipo:
+        <select value={filterTipo} onChange={handleTipoChange}>
+          <option value="">Todos</option>
+          {/* Añade opciones de tipos según tus necesidades */}
+        </select>
+      </label>
+
+      <ul>
+        {filteredProducts.map(product => (
+          <ProductCard key={product.href} {...product} />
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export { ProductFilter };

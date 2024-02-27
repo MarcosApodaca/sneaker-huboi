@@ -1,85 +1,25 @@
 ---
-import type { Productos } from "../components/Card.astro";
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+import { ProductFilter  } from '../js/Filter';
 
-const products:Productos = {
-  href: "",
-	img: "",
-	title: "",
-	marca:"",
-	tipo:"",
-	tallas:"",
-	precio: "",
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = (document.getElementById("searchInput") as HTMLInputElement);
-    const brandFilter = (document.getElementById("brandFilter") as HTMLInputElement);
-    const typeFilter = (document.getElementById("typeFilter") as HTMLInputElement);
-    const productList = (document.getElementById("productList") as HTMLInputElement);
-  
-   
-  
-    // Función para renderizar la lista de productos
-    function renderProducts(filteredProducts:any) {
-      productList.innerHTML = "";
-      filteredProducts.forEach((product:any) => {
-        const productItem = document.createElement("div");
-        productItem.textContent = `${product.name} - Marca: ${product.brand} - Tipo: ${product.type}`;
-        productList.appendChild(productItem);
-      });
-    }
-  
-    // Función para filtrar productos
-    function filterProducts() {
-      const searchTerm = searchInput.value.toLowerCase();
-      const selectedBrand = brandFilter.value.toLowerCase();
-      const selectedType = typeFilter.value.toLowerCase();
-  
-      const filteredProducts = products.filter((product:any) => {
-        const matchesSearchTerm = product.name.toLowerCase().includes(searchTerm);
-        const matchesBrand = selectedBrand === "" || product.brand.toLowerCase() === selectedBrand;
-        const matchesType = selectedType === "" || product.type.toLowerCase() === selectedType;
-  
-        return matchesSearchTerm && matchesBrand && matchesType;
-      });
-  
-      renderProducts(filteredProducts);
-    }
-  
-    // Agregar eventos de cambio para los filtros y el buscador
-    searchInput.addEventListener("input", filterProducts);
-    brandFilter.addEventListener("change", filterProducts);
-    typeFilter.addEventListener("change", filterProducts);
-  
-    // Inicializar la lista con todos los productos al cargar la página
-    renderProducts(products);
-  });
-
+const producto = [
+  { href:'/', img:'/jordan.png', title:'Air Jordan 1 Travis ', tipo:'zapatillas', marca:'nike', tallas:'Tallas 36/45', precio:'120€'},
+  {href:'/', img:'/jordan.png', title:'Air Jordan 1 Travis ', tipo:'sudadera', marca:'adidas', tallas:'Tallas 36/45', precio:'120€'}
+];
 ---
 
+<script type="module" src="/js/filter.js"></script>
 
 <Layout title="sneakers huboi">
     <main class="max-w-[80rem] mx-auto">
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
-        <label for="brandFilter">Filtrar por marca:</label>
+        <ProductFilter products={producto}/>
+    </main>
+</Layout>
 
-        <select id="brandFilter" class=" mr-10">
-          <option value="">Todas las marcas</option>
-          <option value="nike">Nike</option>
-          <option value="adidas">Adidas</option>
-        </select>
 
-        <label for="typeFilter">Filtrar por tipo:</label>
-        <select id="typeFilter">
-          <option value="">Todos los tipos</option>
-          <option value="zapatilla">Zapatilla</option>
-          <option value="sudadera">Sudadera</option>
-          <option value="camiseta">Camiseta</option>
-          <option value="pantalon">Pantalón</option>
-        </select>
 
+<!-- 
         <div class="flex gap-5" id="productList">
             <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
             <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
@@ -97,6 +37,4 @@ document.addEventListener("DOMContentLoaded", function () {
             <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
             <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
             <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-        </div>
-    </main>
-</Layout>
+        </div> -->
