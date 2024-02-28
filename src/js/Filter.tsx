@@ -13,17 +13,17 @@ export interface Productos {
 
 const ProductCard = ({ href, img, title, tipo, marca, tallas, precio }: Productos) => {
   return (
-    <li class="card">
+    <li className="card">
       <a href={href}>
-        <div class="card-img mb-3">
-          <img class="my-24 w-80" src={img} alt="imagen" />
+        <div className="card-img mb-3">
+          <img className="my-24 w-80" src={img} alt="imagen" />
         </div>
       </a>
       <h4>{title}</h4>
       <p>{tipo}</p>
       <p>{marca}</p>
       <p>{tallas}</p>
-      <p class="precio">{precio}</p>
+      <p className="precio">{precio}</p>
     </li>
   );
 };
@@ -42,8 +42,8 @@ const ProductFilter = ({ products }: { products: Productos[] }) => {
   };
 
   const filteredProducts = products.filter(product => {
-    const marcaMatch = filterMarca === '' || products.marca === filterMarca;
-    const tipoMatch = filterTipo === '' || products.tipo === filterTipo;
+    const marcaMatch = filterMarca === '' || product.marca === filterMarca;
+    const tipoMatch = filterTipo === '' || product.tipo === filterTipo;
     console.log(product, filterMarca, filterTipo, marcaMatch, tipoMatch); 
     return marcaMatch && tipoMatch;
     
