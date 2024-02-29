@@ -1,7 +1,8 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import { ProductFilter  } from '../js/Filter';
+import { ProductFilter  } from '../ts/Filter';
+
 
 const producto = [
   { href:'/', img:'/jordan.png', title:'Air Jordan 1 Travis ', tipo:'zapatillas', marca:'nike', tallas:'Tallas 36/45', precio:'120€'},
@@ -9,32 +10,9 @@ const producto = [
 ];
 ---
 
-<script type="module" src="/js/filter.js"></script>
 
 <Layout title="sneakers huboi">
     <main class="max-w-[80rem] mx-auto">
         <ProductFilter products={producto}/>
     </main>
 </Layout>
-
-
-
-<!-- 
-        <div class="flex gap-5" id="productList">
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-        </div>
-        <div class="flex gap-5">
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-        </div>
-        <div class="flex gap-5">
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-            <Card href='/' img='/jordan.png' title='Air Jordan 1 Travis ' tipo='Zapatillas' tallas='Tallas 36/45' precio='120€'></Card>
-        </div> -->
