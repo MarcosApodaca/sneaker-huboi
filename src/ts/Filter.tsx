@@ -16,7 +16,7 @@ const ProductCard = ({ href, img, title, tipo, marca, tallas, precio }: Producto
   return (
     <li className="card">
       <a href={href}>
-        <div className="card-img mb-3">
+        <div className="card-img mb-3 w-[21rem] h-[27rem] bg-slate-200">
           <img className="my-24 w-80" src={img} alt="imagen" />
         </div>
       </a>
@@ -38,19 +38,31 @@ const ProductFilter = ({ products }: { products: Productos[] }) => {
   };
 
   const handleTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    
     setFilterTipo(event.target.value);
   };
-  // const marcaMatch = filterMarca === '' || product.marca.toLocaleLowerCase() === filterMarca.toLocaleLowerCase();
-  // const tipoMatch = filterTipo === '' || product.tipo === filterTipo;
+  
 
   const filteredProducts = products.filter(product =>  {
-    const marcaMatch = filterMarca === '' || product.marca.toLocaleLowerCase() === filterMarca.toLocaleLowerCase();
-    return marcaMatch
+    // const marcaMatch = 
+    if (filterMarca === '' || product.marca.toLocaleLowerCase() === filterMarca.toLocaleLowerCase()){
+      return true
+    } else {
+      return false
+    }
+    // const tipoMatch = filterTipo === '' || product.tipo === filterTipo;
+   
   });
 
+  const handleChange = (event:any) => {
+    console.log("dd");
+    
+    setFilterMarca(event.target.value);
+  };
+
+  console.log('Renderizando productos:', filteredProducts);
   return (
     <div>
+      
       <label>
         Filtrar por marca:
         <select value={filterMarca} onChange={handleMarcaChange}>
@@ -72,6 +84,7 @@ const ProductFilter = ({ products }: { products: Productos[] }) => {
       </label>
 
       <ul>
+        
         {filteredProducts.map(product => (
           <ProductCard key={product.href} {...product} />
         ))}
