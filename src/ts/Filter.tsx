@@ -59,7 +59,7 @@ const ProductFilter = ({ products }: { products: Productos[] }) => {
     setFilterMarca(event.target.value);
   };
 
-  console.log('Renderizando productos:', filteredProducts);
+
   return (
     <div>
       
