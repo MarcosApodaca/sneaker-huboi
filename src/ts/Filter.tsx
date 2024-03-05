@@ -42,22 +42,17 @@ const ProductFilter = ({ products }: { products: Productos[] }) => {
   };
   
 
-  // const filteredProducts = products.filter(product =>  {
-  //   // const marcaMatch = 
-  //   if (filterMarca === '' || product.marca.toLocaleLowerCase() === filterMarca.toLocaleLowerCase()){
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  //   // const tipoMatch = filterTipo === '' || product.tipo === filterTipo;
+  const filteredProducts = products.filter(product =>  {
+    // const marcaMatch = 
+    if (filterMarca === '' || product.marca.toLocaleLowerCase() === filterMarca.toLocaleLowerCase()){
+      return true
+    } else {
+      return false
+    }
+    // const tipoMatch = filterTipo === '' || product.tipo === filterTipo;
    
-  // });
+  });
 
-  const handleChange = (event:any) => {
-    console.log("dd");
-    
-    setFilterMarca(event.target.value);
-  };
 
 
   return (
