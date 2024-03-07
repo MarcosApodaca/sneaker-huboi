@@ -1,17 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Filtro from "../ts/Filtro";
 import MyComponent from "../ts/Filtro"
+import JobSearchApp from "../components/Filtro.astro"
 
 
-const producto = [
-  { href:'/', img:'/jordan.png', title:'Air Jordan 1 Travis ', tipo:'zapatillas', marca:'nike', tallas:'Tallas 36/45', precio:'120€'},
-  {href:'/', img:'/jordan.png', title:'Air Jordan 1 Travis ', tipo:'sudadera', marca:'adidas', tallas:'Tallas 36/45', precio:'120€'}
-];
 ---
 
 
 <Layout title="sneakers huboi">
     <main class="max-w-[80rem] mx-auto">
        <MyComponent/>
+       <Filtro/>
+       
     </main>
 </Layout>
