@@ -1,0 +1,111 @@
+---
+interface OrdenCardProps {
+  productos: Productos;
+}
+
+//Aqui se renderiza los datos de la orden
+
+
+
+export interface Productos {
+  id: number;
+  href: string;
+  img: string;
+  title: string;
+  marca: string;
+  tipo: string;
+  tallas: string;
+  precio: string;
+}
+
+interface OrdenCardProps {
+  productos: Productos;
+}
+
+export function OrdenCard({ productos }: { productos: Productos }) {
+  return (
+    <div class="orden-card bg-white/60 w-60 p-3 m-3 rounded-md shadow-md md:w-1/3">
+      <img src={productos.img} alt={productos.title} />
+      <p>
+        <strong>Profesional:</strong> {productos.title}
+      </p>
+      <p>
+        <strong>Precio:</strong> {productos.precio}
+      </p>
+      <p>
+        <strong>Fecha:</strong> {productos.tallas}
+      </p>
+      <p class="mt-5">
+        <strong>Descripcion</strong> <br /> {productos.marca}
+      </p>
+    </div>
+  );
+}
+
+// filter-options.tsx
+export interface FilterOptionsProps {
+  onFilterChange: (selectedFilter: string | null) => void;
+}
+
+export function FilterOptions({ onFilterChange }: FilterOptionsProps) {
+  const handleFilterChange = (event: Event) => {
+    const target = event.target as HTMLSelectElement;
+    onFilterChange(target.value === 'todos' ? null : target.value);
+  };
+
+  return (
+    <div>
+      <label class="m-2">
+        Filtra Marcas
+      </label>
+      <select id="filter" class="bg-white/60 w-60 p-1 m-3 rounded-md shadow-md" onchange={handleFilterChange}>
+        <option value="todos">Todos</option>
+        <option value="nike">Nike</option>
+        <option value="adidas">Adidas</option>
+      </select>
+    </div>
+  );
+}
+
+// orden-list.tsx
+export interface OrdenListProps {
+  orders: Productos[];
+}
+
+export function OrdenList({ orders }: OrdenListProps) {
+  return (
+    <div>
+      {orders.map(producto => (
+        <OrdenCard key={producto.marca} productos={producto} />
+      ))}
+    </div>
+  );
+}
+
+// job-search-app.tsx
+import { useState } from 'react';
+
+export function JobSearchApp() {
+  const [filter, setFilter] = useState<string | null>(null);
+
+  const productos: Productos[] = [
+    { id: 1, href: '/', img: '/jordan.png', title: 'Air Jordan 1 Travis ', tipo: 'zapatillas', marca: 'nike', tallas: 'Tallas 36/45', precio: '120€' },
+    { id: 2, href: '/', img: '/jordan.png', title: 'Air Jordan 1 Travis ', tipo: 'sudadera', marca: 'adidas', tallas: 'Tallas 36/45', precio: '120€' },
+    { id: 3, href: '/', img: '/jordan.png', title: 'Air Jordan 1 Travis ', tipo: 'sudadera', marca: 'adidas', tallas: 'Tallas 36/45', precio: '120€' }
+  ];
+
+  const filteredOrders = filter ? productos.filter(producto => producto.marca === filter) : productos;
+
+  const handleFilterChange = (selectedFilter: string | null) => {
+    setFilter(selectedFilter);
+  };
+
+  return (
+    <div>
+      <FilterOptions onFilterChange={handleFilterChange} />
+      <OrdenList orders={filteredOrders} />
+    </div>
+  );
+}
+
+---
