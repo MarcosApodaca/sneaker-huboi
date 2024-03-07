@@ -1,5 +1,5 @@
 import React from 'react';
-;
+
 export interface Productos {
   id: number;
   href: string;

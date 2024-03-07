@@ -41,23 +41,10 @@ interface OrdenListProps {
 const OrdenList: React.FC<OrdenListProps> = ({ orders }) => {
   return (
     <div>
-    {orders.map((producto) => (
-      <div key={producto.id}>
-        <p>
-          <strong>Profesional:</strong> {producto.title}
-        </p>
-        <p>
-          <strong>Precio:</strong> {producto.precio}
-        </p>
-        <p>
-          <strong>Marca:</strong> {producto.marca}
-        </p>
-        <p className="mt-5">
-          <strong>Descripción</strong> <br /> {producto.tipo}
-        </p>
-      </div>
-    ))}
-  </div>
+      {orders.map(producto => (
+        <OrdenCard key={producto.marca} productos={producto} />
+      ))}
+    </div>
   );
 };
 
