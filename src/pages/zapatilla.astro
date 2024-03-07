@@ -1,7 +1,6 @@
 ---
-import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import { ProductFilter  } from '../ts/Filter';
+import MyComponent from "../ts/Filtro"
 
 
 const producto = [
@@ -13,6 +12,6 @@ const producto = [
 
 <Layout title="sneakers huboi">
     <main class="max-w-[80rem] mx-auto">
-        <ProductFilter products={producto}/>
+       <MyComponent/>
     </main>
 </Layout>
