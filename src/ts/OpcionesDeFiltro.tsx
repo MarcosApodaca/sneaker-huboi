@@ -15,7 +15,6 @@ interface OrdenCardProps {
   productos: Productos;
 }
 
-//Aqui se renderiza los datos de la orden
 
 const OrdenCard: React.FC<OrdenCardProps> = ({ productos }) => {
   return (
