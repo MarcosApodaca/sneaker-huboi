@@ -34,9 +34,9 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ onFilterChange }) => {
 };
 //--------//
 
-interface OrdenListProps {
+//interface OrdenListProps {
   orders: Productos[];
-}
+}//
 
 const OrdenList: React.FC<OrdenListProps> = ({ orders }) => {
   return (
